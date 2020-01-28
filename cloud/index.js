@@ -86,10 +86,10 @@ async function handleIssue(body, robotid) {
     if (action !== "opened") {
         return `除非有人开启新的issue，否则无需通知机器人`;
     }
-    const mdMsg = `有人在 [${repository.name}](${repository.html_url}) ${actionWords[action]}了一个issue
-                    标题：${issue.title}
-                    发起人：[${issue.user.login}](${issue.user.html_url})
-                    [查看详情](${issue.html_url})`;
+    const mdMsg = `有人在 [${repository.name}](${repository.html_url}) ${actionWords[action]}了一个issue \n
+                    >标题：${issue.title}
+                    >发起人：[${issue.user.login}](${issue.user.html_url})
+                    >[查看详情](${issue.html_url})`;
     await robot.sendMdMsg(mdMsg);
     return;
 }
