@@ -147,9 +147,9 @@ export default class GithubWebhookController {
             return;
         }
         const mdMsg = `有人在 [${repository.name}](${repository.html_url}) ${actionWords[action]}了一个issue
-                        标题：${issue.title}
-                        发起人：[${issue.user.login}](${issue.user.html_url})
-                        [查看详情](${issue.html_url})`;
+        >标题：${issue.title}
+        >发起人：[${issue.user.login}](${issue.user.html_url})
+        >[查看详情](${issue.html_url})`;
         await robot.sendMdMsg(mdMsg);
         ctx.status = 200;
         return;
